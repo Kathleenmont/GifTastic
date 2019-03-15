@@ -19,8 +19,9 @@ function rendor() {
 
 // on click event for creating new button from search input
 $("#add-show").on("click", function (event) {
+    
     event.preventDefault();
-
+    
     newShow = $("#search-bar").val().trim();
 
     topics.push(newShow);
@@ -81,6 +82,7 @@ function getAJAX() {
             
             // funciton to animage and stop animation on gif
             function animate() {
+                $(this).html("");
                 // variables needed to set animate/still
                 var arrayIndex = $(this).attr("data-value");
                 var gifURLAnimate = response.data[arrayIndex].images.fixed_height.url;
