@@ -1,7 +1,7 @@
 
 var apiKey = "1hdR2KkNdeLTsHrQQ5j2WhHb0nmSLCXH";
 var topics = ["The Office", "Sharp Objects", "Mad Men", "Pen15", "Broad City", "Drag Race", "British Bake Off", "Handmaid's Tail", "Insecure", "Parks and Recreation", "Mind Hunter", "chewing Gum"]
-
+var gifCount = 10;
 
 // render function that makes buttons and refreshes the DOM
 function rendor() {
@@ -50,9 +50,8 @@ function getAJAX() {
         
 
 
-
         // loop to print out ratings and images from ajax call
-        for (var j = 0; j < 10; j++) {
+        for (var j = 0; j < gifCount; j++) {
 
             // div to put image and rating into
             var gifDiv = $("<div>");
@@ -60,18 +59,26 @@ function getAJAX() {
             $("#display-area").append(gifDiv);
 
 
-
-            // rating
-            var rating = response.data[j].rating;
-            var ratingText = $("<p>").text("Rating: " + rating);
-            $("#" + j).append(ratingText);
-
             // inital/still image
             var gifURLInitial = response.data[j].images.fixed_height_still.url;
             var gifInitial = $("<img>").attr("src", gifURLInitial).addClass("gif").attr("data-status", "still").attr("data-value", j);
             $("#" + j).append(gifInitial);
             var state = $(".gif").attr("data-status");
 
+
+            // rating
+            var rating = response.data[j].rating;
+            var ratingText = $("<p>").text("Rating: " + rating);
+            $("#" + j).append(ratingText);
+
+            // title
+            var title = response.data[j].title;
+            var titleText = $("<p>").text(title).addClass("title");
+            $("#" + j).append(titleText);
+            
+
+
+            
             // funciton to animage and stop animation on gif
             function animate() {
                 // variables needed to set animate/still
@@ -98,6 +105,8 @@ function getAJAX() {
         }
         // on click event that calls the animate funciton
         $(document).on("click", ".gif", animate);
+
+    
     });
 }
 // initial loading of buttons
