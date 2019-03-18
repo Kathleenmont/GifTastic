@@ -6,7 +6,7 @@ var gifCount = 10;
 // render function that makes buttons and refreshes the DOM
 function rendor() {
     $("#button-area").html("");
-    $("#search-bar").text("");
+    $("#search-bar").val("");
 
 
     // makes show buttons
