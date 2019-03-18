@@ -1,7 +1,23 @@
+
 body {
     background-color: #170A1C;
     color: whitesmoke;
+    font-family: 'Ubuntu', sans-serif;
+    letter-spacing: 1.5px;
+
 }
+h1 {
+    /* background-color: #84BCDA; */
+    color:  #C19AB7;
+    text-align: center;
+    padding: 15px;
+    margin-bottom: -10px;
+    /* font-family: 'Lilita One', cursive; */
+    font-family: 'Staatliches', cursive;
+    font-size: 47px;
+   
+}
+
 #button-area {
     background-color: #84BCDA;
     padding: 10px;
@@ -10,14 +26,16 @@ body {
 
 .show-button {
     background-color: #0B7189;
+    letter-spacing: 1.5px;
 }
 
 .show-button:hover {
-    background-color: #C19AB7
+    background-color: #C19AB7;
 }
 
 #add-show {
     background-color: #C19AB7;
+    letter-spacing: 1.5px;
 }
 
 #add-show:hover {
